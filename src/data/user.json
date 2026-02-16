@@ -1,0 +1,8 @@
+{
+    "email": "singtokien001@gmail.com",
+    "password": "post123456",
+    "role": "USER",
+    "isPremium": false,
+    "deviceName": "QA Testing Device",
+    "qaSecret": "your-qa-secret"
+  }

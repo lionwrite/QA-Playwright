@@ -1,0 +1,2 @@
+// run เฉพาะไฟล์
+npx playwright test src/tests/api/login.e2e.spec.ts
