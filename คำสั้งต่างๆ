@@ -1,2 +1,8 @@
 // run เฉพาะไฟล์
-npx playwright test src/tests/api/login.e2e.spec.ts
+npx playwright test src/tests/api/login.spec.ts
+
+// คำสั่ง run 
+npx playwright test
+
+//ดูรีพอร์ท
+npx playwright show-report

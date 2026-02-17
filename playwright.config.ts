@@ -1,9 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * อ่านค่า environment variables จากไฟล์
- * https://github.com/motdotla/dotenv
- */
+
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
@@ -53,16 +50,18 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
+
+    
     /* ทดสอบในมุมมองมือถือ */
     // {
     //   name: 'Mobile Chrome',
