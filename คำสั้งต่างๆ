@@ -6,3 +6,6 @@ npx playwright test
 
 //ดูรีพอร์ท
 npx playwright show-report
+
+//ลองเพิ่มไปที่ บราน chawin
+git push -u origin chawin
