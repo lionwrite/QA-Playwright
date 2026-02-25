@@ -35,9 +35,12 @@ import { getToken } from '../../helper/auth.helper';
 
 test('Login via test token API', async ({ request }) => {
 
+  // ตัวเเปลเก็บค่า token
   const token = await getToken(request);
 
   expect(token).toBeTruthy();
-
+// print token ออกม่
   console.log('Access Token:', token);
+
+
 });
