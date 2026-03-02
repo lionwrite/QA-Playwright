@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "test:E2E":"playwright test"
-
+    "test:E2E": "playwright test"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +12,8 @@
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.2.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
   }
 }
