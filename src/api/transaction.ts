@@ -2,7 +2,7 @@ import { APIRequestContext, expect } from '@playwright/test';
 
 
 
-// สร้าง transaction
+// 1.สร้าง transaction
 export async function createTransaction(
   request: APIRequestContext,
   token: string,
@@ -28,7 +28,7 @@ export async function createTransaction(
 
 
 
-//  get transaction
+//  2.get transaction
 export async function getMyTransactions(
     request: APIRequestContext,
     token: string
@@ -46,6 +46,6 @@ export async function getMyTransactions(
   
     const body = await response.json();
   
-    // สำคัญมาก 👇
-    return body.data; // หรือ transactions ตามโครงสร้างจริง
+    
+    return body.data; // คืนค่าไปไฟล์ run test
   }

@@ -6,3 +6,5 @@ npx playwright test
 
 //ดูรีพอร์ท
 npx playwright show-report
+
+npx playwright test --grep @e2e
