@@ -19,24 +19,24 @@
 
 
 
-import { APIRequestContext, expect } from '@playwright/test';
-import user from '../data/user.json';
+// import { APIRequestContext, expect } from '@playwright/test';
+// import user from '../data/user.json';
 
-export async function getToken(
-  request: APIRequestContext
-): Promise<string> {
+// export async function getToken(
+//   request: APIRequestContext
+// ): Promise<string> {
   
-  // เรียกใช้ API
-  const response = await request.post(
-    `${process.env.AUTH_URL}/auth/test/token`,
-    {
-      data: user,
-    }
-  );
+//   // เรียกใช้ API
+//   const response = await request.post(
+//     `${process.env.AUTH_URL}/auth/test/token`,
+//     {
+//       data: user,
+//     }
+//   );
 
-  expect(response.status()).toBe(201);
+//   expect(response.status()).toBe(201);
 
-  const body = await response.json();
+//   const body = await response.json();
 
-  return body.access_token;
-}
+//   return body.access_token;
+// }

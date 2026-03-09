@@ -1,51 +1,52 @@
-import { APIRequestContext, expect } from '@playwright/test';
+import { APIRequestContext } from '@playwright/test';
 
+export class TransactionService {
 
+  // 1.สร้าง transaction
+  static async createTransaction(
+    request: APIRequestContext,
+    token: string,
+    data: any
+  ) {
 
-// 1.สร้าง transaction
-export async function createTransaction(
-  request: APIRequestContext,
-  token: string,
-  data: any
-) {
-  const response = await request.post(
-    `${process.env.TRANSACTION_URL}/transactions`,
-    {
+    const url = `${process.env.TRANSACTION_URL}/transactions`;
+
+    const response = await request.post(url, {
       headers: {
         Authorization: `Bearer ${token}`
       },
       data
-    }
-  );
+    });
 
-//   console.log('STATUS:', response.status());
-//   console.log('URL:', `${process.env.TRANSACTION_URL}/transactions`);
+    const body = await response.json();
 
-  expect(response.status()).toBe(201);
-
-  return response.json();
-}
-
+    return {
+      status: response.status(),
+      body
+    };
+  }
 
 
-//  2.get transaction
-export async function getMyTransactions(
+  // 2.get transaction
+  static async getMyTransactions(
     request: APIRequestContext,
     token: string
   ) {
-    const response = await request.get(
-      `${process.env.TRANSACTION_URL}/transactions/user/me`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
+
+    const url = `${process.env.TRANSACTION_URL}/transactions/user/me`;
+
+    const response = await request.get(url, {
+      headers: {
+        Authorization: `Bearer ${token}`
       }
-    );
-  
-    expect(response.status()).toBe(200);
-  
+    });
+
     const body = await response.json();
-  
-    
-    return body.data; // คืนค่าไปไฟล์ run test
+
+    return {
+      status: response.status(),
+      data: body.data
+    };
   }
+
+}
